@@ -38,8 +38,7 @@ export class ContaBancaria {
   }
   public apresentarDados(): void {
     let dados: string;
-    dados = this.numeroConta + " " + this.titular + " " + this.saldo.toFixed(2);
-    l;
+    dados = this.numeroConta + " " + this.titular + " " + this.saldo.toFixed(2); // format the account data as a string
     console.log(dados);
   }
 }
