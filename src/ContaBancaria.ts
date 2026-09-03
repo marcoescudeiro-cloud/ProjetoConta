@@ -1,45 +1,46 @@
 export class ContaBancaria {
- private numeroConta: string;
- private titular: string;
- private saldo: number;
-
- constructor(numeroConta: string, titular: string) {
- this.numeroConta = numeroConta;
- this.titular = titular;
- this.saldo = 0;
- }
-
- public getNumeroConta(): string {
- return this.numeroConta;
- }
-
- public getTitular(): string {
- return this.titular;
- }
-
- public setTitular(novoNome: string): void {
- this.titular = novoNome;
- }
-
- public getSaldo(): number {
- return this.saldo;
- }
-
- public depositar(valor: number): void {
- this.saldo += valor;
- }
-
- public sacar(valor: number): boolean {
- let ok: boolean = false;
- if (this.saldo >= valor) {
- this.saldo -= valor;
-  ok = true;
- }
- return ok;
- }
-
- public apresentarDados(): void {
- console.log( this.numeroConta + " " + this.titular + " " + this.saldo.toFixed(2) );
- }
-
+private numeroConta: string;
+private titular: string;
+private saldo: number;
+constructor(numeroConta: string, titular: string) {
+this.numeroConta = numeroConta;
+this.titular = titular;
+this.saldo = 0;
+}
+public getNumeroConta(): string {
+let numero: string;
+numero = this.numeroConta;
+return numero;
+}
+public getTitular(): string {
+let nome: string;
+nome = this.titular;
+return nome;
+}
+public setTitular(novoNome: string): void {
+this.titular = novoNome;
+}
+public getSaldo(): number {
+let saldoAtual: number;
+saldoAtual = this.saldo;
+return saldoAtual;
+}
+public depositar(valor: number): void {
+this.saldo += valor;
+}
+public sacar(valor: number): boolean {
+let resultado: boolean = false;
+if (this.saldo >= valor) {
+this.saldo -= valor;
+resultado = true;
+}
+return resultado;
+}
+public apresentarDados(): void {
+let dados: string;
+dados = this.numeroConta + " " +
+this.titular + " " +
+this.saldo.toFixed(2);l
+console.log(dados);
+}
 }
